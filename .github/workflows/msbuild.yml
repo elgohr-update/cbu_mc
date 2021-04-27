@@ -49,4 +49,4 @@ jobs:
         prerelease: true
         title: "Development Build"
         files: |
-          **/.exe
+          ${{env.SOLUTION_FILE_PATH}}/**/Release/**/**.exe
