@@ -34,4 +34,4 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
-        path: ${{env.GITHUB_WORKSPACE}}/**/Release/
+        path: ${{env.SOLUTION_FILE_PATH}}/**/Release/
