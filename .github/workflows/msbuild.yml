@@ -35,3 +35,18 @@ jobs:
       uses: actions/upload-artifact@v2.2.3
       with:
         path: ${{env.SOLUTION_FILE_PATH}}/**/Release/
+        
+  -pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Build & test"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            *.zip
